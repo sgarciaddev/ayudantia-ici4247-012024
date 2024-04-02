@@ -5,10 +5,6 @@
 			"name": "root"
 		},
 		{
-			"path": "control-versiones",
-			"name": "Git/GitHub"
-		},
-		{
 			"path": "maquetacion",
 			"name": "Maquetación web"
 		}
