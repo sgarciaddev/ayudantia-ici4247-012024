@@ -7,6 +7,10 @@
     {
       "path": "maquetacion",
       "name": "Maquetación web"
+    },
+    {
+      "path": "ionic-react",
+      "name": "Proyecto Ionic (React)"
     }
   ],
   "settings": {

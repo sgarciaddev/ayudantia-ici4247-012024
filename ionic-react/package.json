@@ -1,0 +1,51 @@
+{
+  "name": "app-resenas",
+  "description": "Proyecto de Ionic/React para la aplicación de Reseñas",
+  "version": "0.0.1",
+  "author": {
+    "name": "Sebastián García Delgadillo",
+    "email": "sebastian.garcia@pucv.cl"
+  },
+  "private": false,
+  "license": "ISC",
+  "repository": "github:sgarciaddev/ayudantia-ingweb-012024",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@capacitor/android": "6.0.0",
+    "@capacitor/app": "6.0.0",
+    "@capacitor/core": "6.0.0",
+    "@capacitor/haptics": "6.0.0",
+    "@capacitor/ios": "6.0.0",
+    "@capacitor/keyboard": "6.0.0",
+    "@capacitor/status-bar": "6.0.0",
+    "@ionic/react": "^8.0.0",
+    "@ionic/react-router": "^8.0.0",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
+    "ionicons": "^7.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4",
+    "swiper": "^11.1.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "6.0.0",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-legacy": "^5.0.0",
+    "@vitejs/plugin-react": "^4.0.1",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.32.2",
+    "jsdom": "^22.1.0",
+    "prettier": "3.2.5",
+    "terser": "^5.4.0",
+    "typescript": "^5.1.6",
+    "vite": "^5.0.0"
+  }
+}
