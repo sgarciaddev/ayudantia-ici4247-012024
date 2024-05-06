@@ -11,6 +11,10 @@
     {
       "path": "ionic-react",
       "name": "Proyecto Ionic (React)"
+    },
+    {
+      "path": "ionic-angular",
+      "name": "Proyecto Ionic (Angular)"
     }
   ],
   "settings": {
