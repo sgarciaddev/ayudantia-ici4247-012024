@@ -1,16 +1,20 @@
 import { IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 
 import { Redirect, Route } from 'react-router';
-import { AppRoute } from '.';
 
-import { heartOutline, home, pencil, personOutline } from 'ionicons/icons';
+import { filmOutline, heartHalfOutline, home, personOutline } from 'ionicons/icons';
 
-import InicioTab from '@/pages/tabs/InicioTab';
-import MeGustaTab from '@/pages/tabs/MeGustaTab';
-import MiCuentaTab from '@/pages/tabs/MiCuentaTab';
-import NuevaResenaTab from '@/pages/tabs/NuevaResenaTab';
+import InicioTab from '@/tabs/inicio/InicioTab';
+import MiCuentaTab from '@/tabs/cuenta/MiCuentaTab';
 
-const sesionIniciada = false;
+import ObrasRouter from './ObrasRouter';
+import ResenasRouter from './ResenasRouter';
+
+interface AppRoute {
+  path: string;
+  component: JSX.Element;
+  exact?: boolean;
+}
 
 interface TabsRouterTabButton {
   tab: string;
@@ -26,18 +30,16 @@ const tabsRoutes: AppRoute[] = [
     exact: true,
   },
   {
-    path: '/app/nueva-resena',
-    component: <NuevaResenaTab />,
-    exact: true,
+    path: '/app/resenas',
+    component: <ResenasRouter />,
   },
   {
-    path: '/app/me-gusta',
-    component: <MeGustaTab />,
+    path: '/app/obras',
+    component: <ObrasRouter />,
   },
   {
-    path: '/app/mi-cuenta',
+    path: '/app/cuenta',
     component: <MiCuentaTab />,
-    exact: true,
   },
   {
     path: '/app',
@@ -54,26 +56,26 @@ const tabButtons: TabsRouterTabButton[] = [
     label: 'Inicio',
   },
   {
-    tab: 'nueva-resena',
-    href: '/app/nueva-resena',
-    icon: pencil,
-    label: 'Nueva reseña',
+    tab: 'resenas',
+    href: '/app/resenas',
+    icon: heartHalfOutline,
+    label: 'Reseñas',
   },
   {
-    tab: 'me-gusta',
-    href: '/app/me-gusta',
-    icon: heartOutline,
-    label: 'Me gusta',
+    tab: 'obras',
+    href: '/app/obras',
+    icon: filmOutline,
+    label: 'Obras',
   },
   {
     tab: 'mi-cuenta',
-    href: '/app/mi-cuenta',
+    href: '/app/cuenta',
     icon: personOutline,
     label: 'Mi cuenta',
   },
 ];
 
-export const TabsRouter: React.FC = () => (
+const TabsRouter: React.FC = () => (
   <IonTabs>
     <IonRouterOutlet>
       {tabsRoutes.map((route) => (
@@ -92,3 +94,5 @@ export const TabsRouter: React.FC = () => (
     </IonTabBar>
   </IonTabs>
 );
+
+export default TabsRouter;

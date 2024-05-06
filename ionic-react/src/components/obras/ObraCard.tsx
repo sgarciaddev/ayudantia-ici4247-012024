@@ -1,3 +1,5 @@
+import { IonRouterLink } from '@ionic/react';
+
 const variants = {
   lime: {
     bg: 'bg-lime-600 dark:bg-lime-300',
@@ -56,19 +58,20 @@ const variants = {
   },
 };
 
-export type HomeSliderVariant = keyof typeof variants;
-export type HomeSlideType = 'pelicula' | 'serie' | 'anime';
+export type ObraCardVariant = keyof typeof variants;
+export type ObraType = 'pelicula' | 'serie' | 'anime';
 
-interface HomeSliderProps {
+interface ObraCardProps {
   title: string;
+  id: number;
   image: string;
-  variant: HomeSliderVariant;
-  type: HomeSlideType;
+  variant: ObraCardVariant;
+  type: ObraType;
 }
 
-const HomeSlider: React.FC<HomeSliderProps> = ({ title, image, variant, type }) => {
+const ObraCard: React.FC<ObraCardProps> = ({ title, id, image, variant, type }) => {
   return (
-    <div className='relative w-full rounded-xl'>
+    <div className='relative h-full w-full rounded-xl'>
       <div className='absolute inset-0 overflow-hidden rounded-xl'>
         <img
           className='absolute inset-0 h-full w-full object-cover opacity-80 transition-all duration-300 ease-in group-hover:scale-110 group-hover:opacity-100'
@@ -82,9 +85,13 @@ const HomeSlider: React.FC<HomeSliderProps> = ({ title, image, variant, type }) 
       >
         {type}
       </p>
-      <h4 className={`${variants[variant].text} absolute bottom-3 left-3 px-2 py-1 text-xl font-semibold`}>{title}</h4>
+      <IonRouterLink routerLink={`/app/obras/desc/${id}`} routerDirection='forward'>
+        <h4 className={`${variants[variant].text} absolute bottom-3 left-3 px-2 py-1 text-xl font-semibold`}>
+          {title}
+        </h4>
+      </IonRouterLink>
     </div>
   );
 };
 
-export default HomeSlider;
+export default ObraCard;

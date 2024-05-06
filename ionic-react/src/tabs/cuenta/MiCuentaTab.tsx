@@ -1,8 +1,8 @@
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../../components/ExploreContainer';
 import { useState } from 'react';
-import SignupPage from '../cuenta/SignupPage';
-import LoginPage from '../cuenta/LoginPage';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+
+import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage';
 
 const MiCuentaTabContent: React.FC<{ setLoggedOut: () => void }> = ({ setLoggedOut }) => {
   return (
@@ -18,11 +18,9 @@ const MiCuentaTabContent: React.FC<{ setLoggedOut: () => void }> = ({ setLoggedO
             <IonTitle size='large'>Mi cuenta</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name='Mi cuenta'>
-          <IonButton className='ion-margin-top' color={'danger'} onClick={setLoggedOut}>
-            Cerrar sesión
-          </IonButton>
-        </ExploreContainer>
+        <IonButton className='ion-margin-top ion-padding' color={'danger'} onClick={setLoggedOut}>
+          Cerrar sesión
+        </IonButton>
       </IonContent>
     </IonPage>
   );

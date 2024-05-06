@@ -17,7 +17,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 import '@/styles/theme/main.css';
 import '@/styles/theme/variables.css';
 
-import { AccountRouter, TabsRouter } from '@/router';
+import TabsRouter from '@/router/TabsRouter';
 
 setupIonicReact();
 
@@ -25,9 +25,6 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path='/cuenta'>
-          <AccountRouter />
-        </Route>
         <Route path='/app'>
           <TabsRouter />
         </Route>
