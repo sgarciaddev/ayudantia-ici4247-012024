@@ -1,0 +1,16 @@
+<ion-list>
+  <ion-list-header>
+    <h3 class="text-2xl font-medium text-zinc-800 dark:text-zinc-100">
+      Reseñas recientes
+    </h3>
+  </ion-list-header>
+  <ion-item *ngFor="let resena of resenasRecientes" class="mt-4">
+    <app-resena-individual
+      [username]="resena.username"
+      [userImg]="resena.userImg"
+      [rating]="resena.rating"
+      [review]="resena.review"
+      [obra]="resena.obra">
+    </app-resena-individual>
+  </ion-item>
+</ion-list>

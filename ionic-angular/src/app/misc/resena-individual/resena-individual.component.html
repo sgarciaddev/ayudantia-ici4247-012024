@@ -1,0 +1,48 @@
+<div class="flex h-full w-full flex-col px-2 py-1">
+  <div class="flex w-full flex-shrink-0 flex-col">
+    <div class="flex">
+      <div class="flex h-12 w-full items-center gap-4">
+        <img class="h-10 w-10 rounded-full" [src]="userImg" alt="" />
+        <div class="flex h-full flex-col justify-center">
+          <p class="font-medium text-zinc-700 dark:text-zinc-300">
+            {{ username }}
+          </p>
+          <app-estrellas [rating]="rating" />
+        </div>
+      </div>
+      <ion-icon
+        *ngIf="like"
+        icon="heart"
+        class="h-8 w-8 text-red-600 dark:text-red-300"></ion-icon>
+    </div>
+    <h5 class="mt-3 text-emerald-600 dark:text-emerald-400">
+      <span class="font-bold">Obra reseñada:</span> {{ obra.title }}
+    </h5>
+    <div class="prose">
+      <p class="py-3 text-zinc-600 dark:text-zinc-400">{{ review }}</p>
+    </div>
+    <div class="mx-4 grid grid-cols-2">
+      <button
+        class="inline-flex items-center justify-center gap-2 border-l border-r border-zinc-300 border-opacity-50 px-2 py-1 text-sm font-medium text-red-600 dark:border-zinc-700 dark:text-red-300"
+        (click)="toggleLike()">
+        <ng-container *ngIf="like">
+          <ion-icon icon="heart-dislike-outline" />
+          Ya no me gusta
+        </ng-container>
+        <ng-container *ngIf="!like">
+          <ion-icon icon="heart-outline" />
+          Me gusta
+        </ng-container>
+      </button>
+      <ion-router-link
+        [routerLink]="['/app/obras/desc', obra.id]"
+        routerDirection="forward">
+        <div
+          class="inline-flex items-center justify-center gap-2 border-l border-r border-zinc-300 border-opacity-50 px-2 py-1 text-sm font-medium text-emerald-600 dark:border-zinc-700 dark:text-emerald-300">
+          <ion-icon icon="sparkles-outline" />
+          Detalles de la obra
+        </div>
+      </ion-router-link>
+    </div>
+  </div>
+</div>

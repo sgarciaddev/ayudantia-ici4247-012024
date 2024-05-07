@@ -1,0 +1,14 @@
+<div className="flex">
+  <ion-icon
+    *ngFor="let i of entireStars"
+    icon="star"
+    class="h-5 w-5 text-amber-600 dark:text-amber-400"></ion-icon>
+  <ion-icon
+    *ngIf="hasHalfStar"
+    icon="star-half"
+    class="h-5 w-5 text-amber-600 dark:text-amber-400"></ion-icon>
+  <ion-icon
+    *ngFor="let i of emptyStars"
+    icon="star-outline"
+    class="h-5 w-5 text-amber-600 dark:text-amber-400"></ion-icon>
+</div>

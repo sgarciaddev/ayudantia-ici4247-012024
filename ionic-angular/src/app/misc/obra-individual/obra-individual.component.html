@@ -1,0 +1,30 @@
+<div class="relative h-full w-full rounded-xl">
+  <div class="absolute inset-0 overflow-hidden rounded-xl">
+    <img
+      class="absolute inset-0 h-full w-full object-cover opacity-80 transition-all duration-300 ease-in group-hover:scale-110 group-hover:opacity-100"
+      [src]="image"
+      [alt]="'Imagen de ' + title" />
+    <div
+      [class]="
+        classes(
+          colors.imgTone,
+          'absolute inset-0 rounded-xl opacity-80 mix-blend-color'
+        )
+      "></div>
+  </div>
+  <p
+    class="absolute right-2 top-2 rounded-full bg-black px-2 py-1 text-xs font-semibold capitalize text-white opacity-70 dark:bg-white dark:text-black">
+    {{ type }}
+  </p>
+  <a [routerLink]="['/app/obras/desc/', id]" routerDirection="forward">
+    <h4
+      [class]="
+        classes(
+          colors.text,
+          'absolute bottom-3 left-3 px-2 py-1 text-xl font-semibold'
+        )
+      ">
+      {{ title }}
+    </h4>
+  </a>
+</div>

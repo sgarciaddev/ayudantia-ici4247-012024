@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/app/inicio"
+        text="Volver"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="ion-padding h-full w-full">
+  <div class="justify center flex h-full w-full items-center">
+    <ion-grid class="ion-padding">
+      <ion-row>
+        <ion-col size="12">
+          <ion-card-title>Inicio de sesión</ion-card-title>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-top ion-padding-top">
+        <ion-col size="12">
+          <div>
+            <ion-label>Nombre de usuario</ion-label>
+            <ion-input type="text"></ion-input>
+          </div>
+          <div>
+            <ion-label>Contraseña</ion-label>
+            <ion-input type="password"></ion-input>
+          </div>
+          <ion-button class="ion-margin-top" color="light" expand="block">
+            Iniciar sesión
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center ion-justify-content-center">
+        <ion-col size="12">
+          <p>
+            ¿No tienes una cuenta?
+            <ion-text color="primary" routerLink="/app/cuenta/registro">
+              regístrate! &rarr;
+            </ion-text>
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

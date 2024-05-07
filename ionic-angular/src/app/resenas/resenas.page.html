@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start"></ion-buttons>
+    <ion-title>Reseñas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <IonRouterLink routerLink="/app/resenas/agregar">
+          <ion-icon class="h-7 w-7" icon="add-outline" />
+        </IonRouterLink>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [value]="activeTab">
+      <ion-segment-button value="recientes" (click)="changeTab('recientes')">
+        <ion-label>Recientes</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tendencias" (click)="changeTab('tendencias')">
+        <ion-label>Tendencias</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="favoritas" (click)="changeTab('favoritas')">
+        <ion-label>Favoritas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let resena of resenasMostrar">
+      <app-resena-individual
+        [username]="resenas[resena].username"
+        [userImg]="resenas[resena].userImg"
+        [rating]="resenas[resena].rating"
+        [obra]="resenas[resena].obra"
+        [review]="resenas[resena].review"></app-resena-individual>
+    </ion-item>
+  </ion-list>
+</ion-content>
