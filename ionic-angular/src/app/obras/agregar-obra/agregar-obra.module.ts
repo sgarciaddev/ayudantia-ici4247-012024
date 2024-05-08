@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ObrasPageRoutingModule } from './obras-routing.module';
+import { AgregarObraPageRoutingModule } from './agregar-obra-routing.module';
 
-import { ObrasPage } from './obras.page';
-import { MiscModule } from '../misc/misc.module';
+import { AgregarObraPage } from './agregar-obra.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ObrasPageRoutingModule,
-    MiscModule,
+    AgregarObraPageRoutingModule
   ],
-  declarations: [ObrasPage],
+  declarations: [AgregarObraPage]
 })
-export class ObrasPageModule {}
+export class AgregarObraPageModule {}

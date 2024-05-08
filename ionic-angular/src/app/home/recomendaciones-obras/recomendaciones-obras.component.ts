@@ -5,6 +5,10 @@ import {
   ObraType,
 } from 'src/app/misc/obra-individual/ObraTypes';
 
+import { register } from 'swiper/element/bundle';
+
+register();
+
 @Component({
   selector: 'app-recomendaciones-obras',
   templateUrl: './recomendaciones-obras.component.html',

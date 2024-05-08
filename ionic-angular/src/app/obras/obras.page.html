@@ -1,13 +1,45 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>obras</ion-title>
+    <ion-buttons slot="start"></ion-buttons>
+    <ion-title>Obras</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <IonRouterLink routerLink="/app/obras/agregar">
+          <ion-icon class="h-7 w-7" icon="add-outline" />
+        </IonRouterLink>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [value]="activeTab">
+      <ion-segment-button
+        value="recomendadas"
+        (click)="changeTab('recomendadas')">
+        <ion-label>Recomendadas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tendencias" (click)="changeTab('tendencias')">
+        <ion-label>Tendencias</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="porVer" (click)="changeTab('porVer')">
+        <ion-label>Por ver</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">obras</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <div class="my-6 w-full px-2">
+    <h3 class="text-2xl font-medium text-zinc-800 dark:text-zinc-100">
+      Obras por ver
+    </h3>
+    <div class="mt-8 flex h-full w-full flex-col">
+      <div *ngFor="let obra of obrasMostrar" class="group mt-6 h-56 w-full">
+        <app-obra-individual
+          [id]="obras[obra].id"
+          [title]="obras[obra].title"
+          [type]="obras[obra].type"
+          [image]="obras[obra].image"
+          [variant]="obras[obra].variant"></app-obra-individual>
+      </div>
+    </div>
+  </div>
 </ion-content>

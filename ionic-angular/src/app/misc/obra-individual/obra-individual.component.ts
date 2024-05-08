@@ -12,13 +12,13 @@ export class ObraIndividualComponent implements OnInit {
   @Input() variant!: ObraCardVariant;
   @Input() type!: ObraType;
 
-  colors: { bg: string; text: string; imgTone: string };
+  colors?: { bg: string; text: string; imgTone: string };
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     this.colors = this.getVariant();
   }
-
-  ngOnInit() {}
 
   getVariant() {
     return variants[this.variant];

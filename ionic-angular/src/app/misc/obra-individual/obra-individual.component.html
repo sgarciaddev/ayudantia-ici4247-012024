@@ -7,7 +7,7 @@
     <div
       [class]="
         classes(
-          colors.imgTone,
+          colors?.imgTone ?? '',
           'absolute inset-0 rounded-xl opacity-80 mix-blend-color'
         )
       "></div>
@@ -20,7 +20,7 @@
     <h4
       [class]="
         classes(
-          colors.text,
+          colors?.text ?? '',
           'absolute bottom-3 left-3 px-2 py-1 text-xl font-semibold'
         )
       ">
